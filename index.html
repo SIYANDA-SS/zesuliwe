@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>For Zesuliwe — With Love ❤️</title>
+<style>
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;background:#09030a;color:#fff;
+  font-family:Georgia,"Times New Roman",serif;overflow-x:hidden
+}
+#intro{
+  position:fixed;inset:0;z-index:100;display:flex;align-items:center;justify-content:center;
+  background:radial-gradient(circle at center,#40142f 0,#170914 45%,#070307 100%);
+  transition:opacity 1.2s,visibility 1.2s
+}
+#intro.hide{opacity:0;visibility:hidden}
+.intro-inner{text-align:center;padding:30px}
+.intro-heart{font-size:75px;animation:pulse 1.4s infinite}
+.intro-small{letter-spacing:5px;text-transform:uppercase;font:12px Arial,sans-serif;color:#f4b6d4}
+.intro-name{font-size:clamp(55px,12vw,120px);margin:15px 0;background:linear-gradient(90deg,#fff,#ffb4d5,#fff);background-size:200%;-webkit-background-clip:text;color:transparent;animation:shine 3s linear infinite}
+.enter{padding:15px 30px;border:1px solid #e8a1c3;background:rgba(255,255,255,.08);color:white;border-radius:99px;font-size:16px;cursor:pointer}
+
+.hero{
+ min-height:100vh;position:relative;display:flex;align-items:center;justify-content:center;text-align:center;
+ padding:60px 20px;background:
+ radial-gradient(circle at 50% 35%,rgba(171,48,112,.34),transparent 32%),
+ linear-gradient(180deg,#180814 0%,#09030a 100%);
+ overflow:hidden
+}
+.stars,.petals{position:absolute;inset:0;pointer-events:none}
+.star{position:absolute;width:3px;height:3px;background:#fff;border-radius:50%;opacity:.6;animation:twinkle 3s infinite}
+.hero-content{position:relative;z-index:2;max-width:900px}
+.eyebrow{font:12px Arial,sans-serif;letter-spacing:7px;color:#e7a8c5;text-transform:uppercase}
+h1{font-size:clamp(70px,14vw,150px);line-height:.8;margin:35px 0 25px;font-weight:400}
+.glow{color:#fff;text-shadow:0 0 25px rgba(255,140,196,.55),0 0 70px rgba(255,75,157,.25)}
+.hero p{font-size:clamp(18px,3vw,26px);line-height:1.7;color:#eadbe3;max-width:680px;margin:auto}
+.scroll{margin-top:55px;font:11px Arial,sans-serif;letter-spacing:4px;color:#c88eae;animation:float 2s infinite}
+
+.section{padding:100px 20px;background:#0b0409}
+.inner{max-width:900px;margin:auto}
+.center{text-align:center}
+.kicker{font:11px Arial,sans-serif;letter-spacing:5px;color:#cf7da5;text-transform:uppercase}
+.title{font-size:clamp(40px,7vw,72px);font-weight:400;margin:15px 0 50px}
+
+.letter{
+ background:linear-gradient(135deg,rgba(255,255,255,.07),rgba(255,255,255,.025));
+ border:1px solid rgba(255,180,214,.18);border-radius:28px;padding:clamp(25px,6vw,60px);
+ box-shadow:0 25px 80px rgba(0,0,0,.35);font-size:19px;line-height:2;color:#eadfe5
+}
+.letter p{margin:0 0 22px}.signature{font-size:28px;color:#ffb4d4;text-align:right;margin-top:35px}
+
+.reasons{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.reason{padding:30px 20px;border:1px solid rgba(255,180,214,.12);border-radius:24px;background:#12070e;text-align:center;transition:.3s}
+.reason:hover{transform:translateY(-8px);border-color:#c86b99}
+.reason b{display:block;font-size:22px;margin:12px 0}.reason span{font-size:14px;color:#bdaab5;line-height:1.6}
+
+.surprise{
+ min-height:90vh;display:flex;align-items:center;justify-content:center;text-align:center;
+ background:radial-gradient(circle at center,#321027,#0b0409 60%);padding:80px 20px
+}
+.love-box{max-width:700px}
+.big-heart{font-size:100px;cursor:pointer;filter:drop-shadow(0 0 30px #d34c91);animation:pulse 1.8s infinite}
+button{
+ border:1px solid #d984ab;background:linear-gradient(135deg,#7e2759,#bd4d83);
+ color:#fff;padding:16px 30px;border-radius:99px;font-size:16px;cursor:pointer;
+ box-shadow:0 10px 35px rgba(165,46,108,.25);transition:.25s
+}
+button:hover{transform:translateY(-3px);box-shadow:0 15px 45px rgba(205,67,133,.4)}
+#secret{max-height:0;overflow:hidden;transition:max-height 1s ease;margin-top:25px}
+#secret.open{max-height:500px}
+.secret-text{font-size:24px;line-height:1.8;color:#ffd9e9;padding:20px}
+
+footer{text-align:center;padding:35px;background:#070207;color:#72566a;font:12px Arial,sans-serif;letter-spacing:2px}
+
+.confetti{position:fixed;top:-20px;z-index:90;pointer-events:none;animation:fall linear forwards}
+
+@keyframes pulse{50%{transform:scale(1.12)}}
+@keyframes float{50%{transform:translateY(-8px)}}
+@keyframes twinkle{50%{opacity:.1;transform:scale(.5)}}
+@keyframes shine{to{background-position:200% center}}
+@keyframes fall{to{transform:translateY(110vh) rotate(720deg);opacity:0}}
+@media(max-width:700px){.reasons{grid-template-columns:1fr}.letter{font-size:17px}.hero{min-height:92vh}}
+</style>
+</head>
+<body>
+
+<div id="intro">
+  <div class="intro-inner">
+    <div class="intro-heart">❤️</div>
+    <div class="intro-small">Someone made something for you...</div>
+    <div class="intro-name">Zesuliwe</div>
+    <button class="enter" onclick="enter()">Open your birthday surprise ✨</button>
+  </div>
+</div>
+
+<section class="hero">
+  <div class="stars" id="stars"></div>
+  <div class="hero-content">
+    <div class="eyebrow">October 7th · A special day</div>
+    <h1 class="glow">Happy Birthday,<br>Zesuliwe.</h1>
+    <p>
+      If I could give you one thing today, it would be the ability to see
+      yourself through my eyes — so you'd finally understand how incredibly
+      special you are to me.
+    </p>
+    <div class="scroll">SCROLL DOWN · THERE'S MORE ↓</div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="inner">
+    <div class="center">
+      <div class="kicker">A letter for you</div>
+      <div class="title">To my favourite person ❤️</div>
+    </div>
+    <div class="letter">
+      <p>My Zesuliwe,</p>
+      <p>
+        Today isn't just another day. It's the day the world got a little
+        brighter because <em>you</em> were born.
+      </p>
+      <p>
+        I hope this year gives you reasons to smile when nobody is watching,
+        moments you'll wish you could replay forever, and dreams that become
+        real before you even realise they're happening.
+      </p>
+      <p>
+        I want you to know that I appreciate you — your heart, your smile,
+        your personality, the little things you do, and simply the way you
+        make being around you feel special.
+      </p>
+      <p>
+        I may not always have the perfect words, but one thing I hope you
+        never question is how much you mean to me.
+      </p>
+      <p>
+        So today, celebrate yourself. Laugh loudly. Take too many pictures.
+        Eat the cake. Be spoiled. You deserve every beautiful thing coming
+        your way.
+      </p>
+      <p>
+        And if you ever forget how loved you are, come back to this little
+        corner of the internet and let it remind you. ❤️
+      </p>
+      <div class="signature">Happy birthday, my love. ♡</div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="padding-top:40px">
+  <div class="inner center">
+    <div class="kicker">Just a few things</div>
+    <div class="title">Why you're special</div>
+    <div class="reasons">
+      <div class="reason"><div style="font-size:34px">🌹</div><b>Your heart</b><span>The kind of beautiful that goes far beyond appearances.</span></div>
+      <div class="reason"><div style="font-size:34px">✨</div><b>Your energy</b><span>You have a way of making ordinary moments feel like memories.</span></div>
+      <div class="reason"><div style="font-size:34px">❤️</div><b>Simply you</b><span>There is only one Zesuliwe. And I'm lucky to know her.</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="surprise">
+  <div class="love-box">
+    <div class="kicker">One last thing...</div>
+    <div class="title">I saved something for you</div>
+    <div class="big-heart" onclick="openSecret()">❤️</div>
+    <p style="color:#bdaab5">Tap the heart.</p>
+    <button onclick="openSecret()">Open my secret message 💌</button>
+    <div id="secret">
+      <div class="secret-text">
+        Zesuliwe, wherever this year takes you, I hope you remember this:
+        <br><br>
+        <strong>You are deeply loved. You are worth celebrating. And you deserve
+        a life as beautiful as the heart you carry.</strong>
+        <br><br>
+        Happy Birthday, beautiful. ❤️
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>MADE WITH LOVE · FOR ZESULIWE · ❤️</footer>
+
+<script>
+function enter(){
+ document.getElementById("intro").classList.add("hide");
+ setTimeout(()=>document.getElementById("intro").remove(),1300);
+ confetti();
+}
+function openSecret(){
+ document.getElementById("secret").classList.add("open");
+ confetti();
+}
+function confetti(){
+ const symbols=["❤️","💗","💕","✨","🌹","♡"];
+ for(let i=0;i<55;i++){
+  const e=document.createElement("div");
+  e.className="confetti";
+  e.textContent=symbols[Math.floor(Math.random()*symbols.length)];
+  e.style.left=Math.random()*100+"vw";
+  e.style.fontSize=(12+Math.random()*22)+"px";
+  e.style.animationDuration=(3+Math.random()*4)+"s";
+  document.body.appendChild(e);
+  setTimeout(()=>e.remove(),7500);
+ }
+}
+for(let i=0;i<70;i++){
+ const s=document.createElement("i");
+ s.className="star";
+ s.style.left=Math.random()*100+"%";
+ s.style.top=Math.random()*100+"%";
+ s.style.animationDelay=Math.random()*3+"s";
+ document.getElementById("stars").appendChild(s);
+}
+</script>
+</body>
+</html>
